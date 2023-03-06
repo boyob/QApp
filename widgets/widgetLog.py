@@ -36,8 +36,8 @@ class WidgetHandler(logging.Handler):
         self.widget = WidgetPlainTextEdit()
         self.widget.setReadOnly(True)
         self.widget.action_debug.triggered.connect(self.debug)
-        notest = QtGui.QTextCharFormat()
-        notest.setForeground(QtGui.QColor(QtCore.Qt.gray))
+        notset = QtGui.QTextCharFormat()
+        notset.setForeground(QtGui.QColor(QtCore.Qt.gray))
         debug = QtGui.QTextCharFormat()
         debug.setForeground(QtGui.QColor(QtCore.Qt.white))
         info = QtGui.QTextCharFormat()
@@ -48,7 +48,7 @@ class WidgetHandler(logging.Handler):
         error.setForeground(QtGui.QColor(QtCore.Qt.red))
         critical = QtGui.QTextCharFormat()
         critical.setForeground(QtGui.QColor('#990000'))
-        self.fmt = [notest, debug, info, warning, error, critical]
+        self.fmt = [notset, debug, info, warning, error, critical]
 
     def debug(self):
         if self.widget.action_debug.isChecked():
