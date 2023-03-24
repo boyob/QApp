@@ -61,6 +61,8 @@ class WidgetHandler(logging.Handler):
         self.widget.mergeCurrentCharFormat(self.fmt[level // 10])
         msg = self.format(record)
         self.widget.appendPlainText(msg)
+        self.widget.update()
+        self.widget.moveCursor(QtGui.QTextCursor.End)
 
 
 class WidgetLog(QtWidgets.QWidget):
